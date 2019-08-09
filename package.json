@@ -18,14 +18,18 @@
     "cordova-plugin-media": "git+https://github.com/mmig/cordova-plugin-media.git#CB-6880-mediaready-state-impl",
     "cordova-plugin-network-information": "^2.0.2",
     "cordova-plugin-vibration": "^3.1.1",
-    "mmir-lib": "git+https://github.com/mmig/mmir-lib.git"
+    "mmir-lib": "git+https://github.com/mmig/mmir-lib.git",
+    "mmir-plugin-speech-android": "git+https://github.com/mmig/mmir-plugin-speech-android.git#mmir-v5"
   },
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
       "cordova-plugin-media": {},
       "cordova-plugin-vibration": {},
-      "cordova-plugin-network-information": {}
+      "cordova-plugin-network-information": {},
+      "mmir-plugin-speech-android": {
+        "MMIR_PLUGIN_MODE": "normal"
+      }
     },
     "platforms": [
       "android"
