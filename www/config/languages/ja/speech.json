@@ -1,0 +1,10 @@
+{	
+	"language": "ja-JP",
+	"long": "jpn-JPN",
+	
+	"plugins": {
+		"nuanceAudioInput": {
+			"language": "jpn-JPN"
+		}
+	}
+}

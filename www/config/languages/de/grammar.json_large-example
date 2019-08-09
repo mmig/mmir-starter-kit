@@ -1,0 +1,751 @@
+{
+  "example_phrase": "erstelle einen Termin am 16.07.2018 um 15:30 Uhr",
+  "stop_word": [
+    "bitte",
+    "doch",
+    "der",
+    "der",
+    "die",
+    "das",
+    "dem",
+    "den",
+    "des",
+    "diese",
+    "dieser",
+    "diesem",
+    "diesen",
+    "dieses",
+    "mir",
+    "mal",
+    "jetzt",
+    "lass",
+    "möchte",
+    "ich",
+    "bla"
+  ],
+  "tokens": {
+    "UNDEF_ARTICLE": [
+      "eines",
+      "einen",
+      "einer",
+      "einem",
+      "eine",
+      "ein"
+    ],
+    "PP_MINE": [
+      "meinen",
+      "meine",
+      "mein"
+    ],
+    "V_PLAY_IMP": [
+      "spiele",
+      "spiel"
+    ],
+    "V_PLAY_INF": [
+      "spielen",
+      "abspielen",
+      "hören",
+      "anhören",
+      "erkennen"
+    ],
+    "V_PLAY_RADIO_INF": [
+      "radiohören"
+    ],
+    "V_PLAY_FIN": [
+      "läuft",
+      "spielt",
+      "abspielt"
+    ],
+    "V_SHOW_IMP": [
+      "zeige",
+      "zeig"
+    ],
+    "V_SHOW_INF": [
+      "zeigen",
+      "anzeigen"
+    ],
+    "V_RECORD_IMP": [
+      "nimm",
+      "nehme"
+    ],
+    "V_RECORD_INF": [
+      "aufnehmen",
+      "aufnahme",
+      "abgeben"
+    ],
+    "V_SEND_IMP": [
+      "sende",
+      "send",
+      "schicke",
+      "schick",
+      "poste"
+    ],
+    "V_SEND_INF": [
+      "schicken",
+      "senden",
+      "posten",
+      "weg damit"
+    ],
+    "V_SEND_FIN": [
+      "sendet",
+      "postet"
+    ],
+    "V_OPEN_INF": [
+      "öffnen",
+      "starten"
+    ],
+    "V_OPEN_FIN": [
+      "öffnet",
+      "startet"
+    ],
+    "V_FIND_IMP": [
+      "scanne",
+      "suche",
+      "finde"
+    ],
+    "RADAR": [
+      "radar",
+      "scanner"
+    ],
+    "RADIO": [
+      "radio",
+      "stream",
+      "aupeo"
+    ],
+    "AUDIOTAG": [
+      "audiotags",
+      "audiotag",
+      "audionotiz"
+    ],
+    "VOICETAG": [
+      "voicetags",
+      "voicetag",
+      "sprachnotiz",
+      "kommentare",
+      "kommentar",
+      "bewertungen",
+      "bewertung"
+    ],
+    "SOCIAL_NETWORK": [
+      "twitter",
+      "facebook",
+      "qype",
+      "voice2social"
+    ],
+    "TWEET": [
+      "tweeten",
+      "tweete",
+      "tweet"
+    ],
+    "INFO": [
+      "informationen",
+      "information",
+      "info",
+      "daten",
+      "details",
+      "detail"
+    ],
+    "PREPOSITION": [
+      "an",
+      "um",
+      "am",
+      "an",
+      "im",
+      "in",
+      "auf",
+      "ab",
+      "für",
+      "nach",
+      "von",
+      "vom",
+      "zum"
+    ],
+    "PR_UPTO": [
+      "bis"
+    ],
+    "WHAT": [
+      "was"
+    ],
+    "WHERE": [
+      "wo"
+    ],
+    "POI_CATEGORY": [
+      "cafe",
+      "restaurant",
+      "bars",
+      "bar",
+      "clubs"
+    ],
+    "LOCATION_NAME": [
+      "mitte",
+      "schöneberg",
+      "moabit",
+      "berlin hauptbahnhof",
+      "berlin",
+      "tiergarten",
+      "zoo",
+      "wedding",
+      "prenzlauer berg",
+      "fridrichshain",
+      "kreuzberg",
+      "charlottenburg",
+      "spandau",
+      "wilmersdorf",
+      "zehlendorf",
+      "steglitz",
+      "tempelhof",
+      "treptow",
+      "lichtenberg",
+      "pankow",
+      "reinickendorf"
+    ],
+    "SQUARE": [
+      "[a-zA-Z_]+platz",
+      "([a-zA-Z_]+-)+platz"
+    ],
+    "NEAR_TO_ME": [
+      "meiner nähe",
+      "umgebung",
+      "nähe",
+      "hier"
+    ],
+    "STREET": [
+      "[a-zA-Z_]+ straße",
+      "[a-zA-Z_]+ str\\.",
+      "[a-zA-Z_]+ str",
+      "[a-zA-Z_]+straße",
+      "[a-zA-Z_]+str\\.",
+      "[a-zA-Z_]+str",
+      "[a-zA-Z_]+damm"
+    ],
+    "MUSIC": [
+      "house",
+      "pop",
+      "jazz",
+      "musik",
+      "meine lieblingsmusik"
+    ],
+    "NUMBER": [
+      "ein",
+      "eins",
+      "zwei",
+      "drei",
+      "vier",
+      "fünf",
+      "sechs",
+      "sieben",
+      "acht",
+      "neun",
+      "zehn",
+      "elf",
+      "zwölf",
+      "[0-9]+"
+    ],
+    "THEME": [
+      "thema"
+    ],
+    "DATENUMBER": [
+      "[0-9]+\\.[0-9]+\\.[0-9]+",
+      "[0-9]+\\.[0-9]+\\."
+    ],
+    "DATE_VARIABLE": [
+      "heute",
+      "morgen",
+      "übermorgen",
+      "gestern",
+      "vorgestern"
+    ],
+    "PERSON": [
+      "vater",
+      "mutter",
+      "bruder",
+      "schwester"
+    ],
+    "TIMENUMBER": [
+      "[0-9][0-9]?\\:[0-9][0-9]"
+    ],
+    "ORDINAL": [
+      "[0-9]+\\."
+    ],
+    "MONTH": [
+      "januar",
+      "februar",
+      "märz",
+      "april",
+      "mai",
+      "juni",
+      "juli",
+      "august",
+      "september",
+      "oktober",
+      "november",
+      "dezember",
+      "[1-9]|1[0-2]"
+    ],
+    "TIMEWORD": [
+      "uhr"
+    ],
+    "STARS": [
+      "sterne",
+      "stern"
+    ],
+    "MORE": [
+      "mehr"
+    ],
+    "AGAIN": [
+      "nochmal"
+    ],
+    "AND": [
+      "und"
+    ],
+    "ALL": [
+      "allen",
+      "alles",
+      "alle"
+    ],
+    "THAT": [
+      "dazu"
+    ],
+    "LIKE": [
+      "super",
+      "gefällt"
+    ],
+    "MICRO": [
+      "mikrophon",
+      "mikrofon",
+      "mikro"
+    ],
+    "CAFE": [
+      "monopol"
+    ],
+    "APPOINTMENTS": [
+      "termine"
+    ],
+    "APPOINTMENT": [
+      "termin"
+    ],
+    "CREATE": [
+      "erstelle"
+    ],
+    "REST": [
+      "[a-zA-Z_]+"
+    ]
+  },
+  "utterances": {
+    "DATE": {
+      "phrases": [
+        "ORDINAL MONTH NUMBER",
+        "ORDINAL MONTH",
+        "DATENUMBER",
+        "ORDINAL",
+        "DATE_VARIABLE"
+      ],
+      "semantic": {
+        "NoMatch": {},
+        "date": {
+          "dateString": {
+            "day": "_$ordinal[0]",
+            "month": "_$month[0]",
+            "year": "_$number[0]"
+          },
+          "date": "_$datenumber[0]",
+          "variable": "_$date_variable[0]"
+        }
+      }
+    },
+    "TIME": {
+      "phrases": [
+        "TIMENUMBER TIMEWORD"
+      ],
+      "semantic": {
+        "NoMatch": {},
+        "time": "_$timenumber[0]"
+      }
+    },
+    "TIMERANGE": {
+      "phrases": [
+        "NUMBER PR_UPTO TIME",
+        "TIME PR_UPTO TIME"
+      ],
+      "semantic": {
+        "NoMatch": {},
+        "timerange": {
+          "time1": {
+            "number": "_$number[0]",
+            "timeValue": "_$time[0]['semantic'].time"
+          },
+          "time2": "_$time[1]['semantic'].time"
+        }
+      }
+    },
+    "DATETIME": {
+      "phrases": [
+        "DATE TIME",
+        "DATE PREPOSITION TIME",
+        "DATE",
+        "TIME"
+      ],
+      "semantic": {
+        "NoMatch": {},
+        "datetime": {
+          "time": "_$time[0]['semantic'].time",
+          "date": "_$date[0]['semantic'].date"
+        }
+      }
+    },
+    "LOCATION": {
+      "phrases": [
+        "STREET",
+        "NEAR_TO_ME",
+        "LOCATION_NAME",
+        "SQUARE"
+      ],
+      "semantic": {
+        "Place": {
+          "name": "_$phrase"
+        }
+      }
+    },
+    "PLAY": {
+      "phrases": [
+        "V_PLAY_INF",
+        "V_PLAY_IMP PREPOSITION"
+      ],
+      "semantic": {
+        "Play": {}
+      }
+    },
+    "PLAY_MORE": {
+      "phrases": [
+        "MORE V_PLAY_INF",
+        "V_PLAY_IMP MORE"
+      ],
+      "semantic": {
+        "Play": {
+          "more": "yes"
+        }
+      }
+    },
+    "PLAY_AGAIN": {
+      "phrases": [
+        "AGAIN V_PLAY_INF",
+        "V_PLAY_IMP AGAIN"
+      ],
+      "semantic": {
+        "Play": {
+          "again": "yes"
+        }
+      }
+    },
+    "PLAY_RADIO": {
+      "phrases": [
+        "V_PLAY_IMP RADIO PREPOSITION",
+        "V_PLAY_IMP RADIO THAT",
+        "V_PLAY_IMP RADIO",
+        "RADIO V_PLAY_INF",
+        "RADIO V_PLAY_FIN",
+        "THAT RADIO V_PLAY_INF",
+        "V_PLAY_INF RADIO",
+        "RADIO PREPOSITION",
+        "V_PLAY_RADIO_INF"
+      ],
+      "semantic": {
+        "Play": {
+          "type": "radio"
+        }
+      }
+    },
+    "PLAY_AUDIOTAGS": {
+      "phrases": [
+        "V_PLAY_IMP AUDIOTAG PREPOSITION",
+        "V_PLAY_IMP AUDIOTAG",
+        "AUDIOTAG V_PLAY_INF",
+        "AUDIOTAG V_PLAY_FIN",
+        "V_PLAY_INF AUDIOTAG"
+      ],
+      "semantic": {
+        "Play": {
+          "type": "audio"
+        }
+      }
+    },
+    "PLAY_VOICETAGS": {
+      "phrases": [
+        "V_PLAY_IMP VOICETAG PREPOSITION",
+        "V_PLAY_IMP VOICETAG",
+        "VOICETAG V_PLAY_INF",
+        "VOICETAG V_PLAY_FIN",
+        "V_PLAY_INF VOICETAG"
+      ],
+      "semantic": {
+        "Play": {
+          "type": "voice"
+        }
+      }
+    },
+    "RECORD_AUDIOTAG": {
+      "phrases": [
+        "V_RECORD_IMP AUDIOTAG PREPOSITION",
+        "V_RECORD_IMP AUDIOTAG",
+        "AUDIOTAG V_RECORD_INF",
+        "V_RECORD_INF AUDIOTAG"
+      ],
+      "semantic": {
+        "Record": {
+          "type": "audio"
+        }
+      }
+    },
+    "RECORD_VOICETAG": {
+      "phrases": [
+        "V_RECORD_IMP VOICETAG PREPOSITION",
+        "V_RECORD_IMP VOICETAG",
+        "VOICETAG V_RECORD_INF",
+        "V_RECORD_INF VOICETAG",
+        "VOICETAG PREPOSITION CAFE"
+      ],
+      "semantic": {
+        "Record": {
+          "type": "voice"
+        }
+      }
+    },
+    "RECORD": {
+      "phrases": [
+        "V_RECORD_INF",
+        "MICRO PREPOSITION"
+      ],
+      "semantic": {
+        "Record": {}
+      }
+    },
+    "SEND": {
+      "phrases": [
+        "V_SEND_IMP PREPOSITION SOCIAL_NETWORK",
+        "V_SEND_IMP SOCIAL_NETWORK",
+        "PREPOSITION SOCIAL_NETWORK AND SOCIAL_NETWORK V_SEND_INF",
+        "PREPOSITION SOCIAL_NETWORK AND SOCIAL_NETWORK V_SEND_FIN",
+        "PREPOSITION SOCIAL_NETWORK V_SEND_INF",
+        "PREPOSITION SOCIAL_NETWORK V_SEND_FIN",
+        "PREPOSITION ALL V_SEND_INF",
+        "PREPOSITION ALL V_SEND_FIN",
+        "AUDIOTAG PREPOSITION SOCIAL_NETWORK V_SEND_INF",
+        "AUDIOTAG PREPOSITION SOCIAL_NETWORK V_SEND_FIN",
+        "VOICETAG PREPOSITION SOCIAL_NETWORK V_SEND_INF",
+        "VOICETAG PREPOSITION SOCIAL_NETWORK V_SEND_FIN",
+        "V_SEND_INF PREPOSITION SOCIAL_NETWORK",
+        "V_SEND_FIN PREPOSITION SOCIAL_NETWORK",
+        "V_SEND_INF",
+        "V_SEND_FIN"
+      ],
+      "semantic": {
+        "Send": {
+          "recipient": "_$social_network[0]",
+          "recipient2": "_$social_network[1]",
+          "all": "_$all[0]"
+        }
+      }
+    },
+    "SEND_TWEET": {
+      "phrases": [
+        "TWEET",
+        "V_SEND_IMP TWEET PREPOSITION",
+        "V_SEND_IMP TWEET",
+        "TWEET V_SEND_INF",
+        "TWEET V_SEND_FIN"
+      ],
+      "semantic": {
+        "Send": {
+          "recipient": "twitter"
+        }
+      }
+    },
+    "SHOW_INFO": {
+      "phrases": [
+        "V_SHOW_IMP INFO PREPOSITION",
+        "V_SHOW_IMP INFO THAT",
+        "V_SHOW_IMP INFO",
+        "INFO V_SHOW_INF",
+        "MORE INFO",
+        "INFO THAT"
+      ],
+      "semantic": {
+        "ShowInfo": {}
+      }
+    },
+    "SHOW_POIs": {
+      "phrases": [
+        "V_SHOW_IMP REST POI_CATEGORY PREPOSITION LOCATION",
+        "V_SHOW_IMP REST MUSIC POI_CATEGORY PREPOSITION LOCATION",
+        "V_SHOW_IMP REST PREPOSITION LOCATION"
+      ],
+      "semantic": {
+        "ShowPOIs": {
+          "poicat": "_$poi_category[0]",
+          "genre": "_$music[0]",
+          "location": "_$location[0]['semantic']"
+        }
+      }
+    },
+    "JUST_SHOW_APPOINTMENTs": {
+      "phrases": [
+        "V_SHOW_IMP PP_MINE APPOINTMENTS"
+      ],
+      "semantic": {
+        "ShowAppointments": {}
+      }
+    },
+    "SHOW_APPOINTMENTs_FROM": {
+      "phrases": [
+        "V_SHOW_IMP PP_MINE APPOINTMENTS PREPOSITION DATETIME"
+      ],
+      "semantic": {
+        "ShowAppointments": {
+          "datetime": "_$datetime[0]['semantic'].datetime"
+        }
+      }
+    },
+    "SHOW_APPOINTMENTs_FROM_TO": {
+      "phrases": [
+        "V_SHOW_IMP PP_MINE APPOINTMENTS PREPOSITION DATETIME PR_UPTO PREPOSITION DATETIME",
+        "V_SHOW_IMP PP_MINE APPOINTMENTS PREPOSITION DATETIME PR_UPTO DATETIME"
+      ],
+      "semantic": {
+        "ShowAppointments": {
+          "prep1": "_$preposition[0]",
+          "datetime": "_$datetime[0]['semantic'].datetime",
+          "datetime2": "_$datetime[1]['semantic'].datetime"
+        }
+      }
+    },
+    "CREATE_APPOINTMENTS": {
+      "phrases": [
+        "CREATE DATE UNDEF_ARTICLE APPOINTMENT PREPOSITION TIME",
+        "CREATE DATE UNDEF_ARTICLE APPOINTMENT PREPOSITION TIMERANGE",
+        "CREATE DATE UNDEF_ARTICLE APPOINTMENT",
+        "CREATE DATE PREPOSITION TIME UNDEF_ARTICLE APPOINTMENT",
+        "CREATE DATE PREPOSITION TIMERANGE UNDEF_ARTICLE APPOINTMENT",
+        "CREATE DATE UNDEF_ARTICLE APPOINTMENT PREPOSITION TIMERANGE FULL_TITLE",
+        "CREATE DATE UNDEF_ARTICLE APPOINTMENT PREPOSITION TIME FULL_TITLE",
+        "CREATE DATE UNDEF_ARTICLE APPOINTMENT FULL_TITLE",
+        "CREATE DATE PREPOSITION TIMERANGE UNDEF_ARTICLE APPOINTMENT FULL_TITLE",
+        "CREATE DATE PREPOSITION TIME UNDEF_ARTICLE APPOINTMENT FULL_TITLE",
+        "CREATE UNDEF_ARTICLE APPOINTMENT PREPOSITION DATE PREPOSITION TIMERANGE",
+        "CREATE UNDEF_ARTICLE APPOINTMENT PREPOSITION DATE PREPOSITION TIME",
+        "CREATE UNDEF_ARTICLE APPOINTMENT PREPOSITION TIMERANGE",
+        "CREATE UNDEF_ARTICLE APPOINTMENT PREPOSITION TIME",
+        "CREATE UNDEF_ARTICLE APPOINTMENT PREPOSITION DATE",
+        "CREATE UNDEF_ARTICLE APPOINTMENT PREPOSITION TIMERANGE FULL_TITLE",
+        "CREATE UNDEF_ARTICLE APPOINTMENT PREPOSITION TIME FULL_TITLE",
+        "CREATE UNDEF_ARTICLE APPOINTMENT PREPOSITION DATE FULL_TITLE",
+        "CREATE UNDEF_ARTICLE APPOINTMENT PREPOSITION DATE PREPOSITION TIMERANGE FULL_TITLE",
+        "CREATE UNDEF_ARTICLE APPOINTMENT PREPOSITION DATE PREPOSITION TIME FULL_TITLE",
+        "CREATE UNDEF_ARTICLE APPOINTMENT REST PREPOSITION DATE PREPOSITION TIMERANGE FULL_TITLE",
+        "CREATE UNDEF_ARTICLE APPOINTMENT REST PREPOSITION DATE PREPOSITION TIME FULL_TITLE",
+        "CREATE UNDEF_ARTICLE APPOINTMENT REST PREPOSITION DATE PREPOSITION TIMERANGE",
+        "CREATE UNDEF_ARTICLE APPOINTMENT REST PREPOSITION DATE PREPOSITION TIME"
+      ],
+      "semantic": {
+        "CreateAppointment": {
+          "prep1": "_$preposition[0]",
+          "date": "_$date[0]['semantic'].date",
+          "time": "_$time[0]['semantic'].time",
+          "timerange": "_$timerange[0]['semantic'].timerange",
+          "full_title": "_$full_title[0]['semantic'].title"
+        }
+      }
+    },
+    "FIND_PERSON": {
+      "phrases": [
+        "V_FIND_IMP PP_MINE PERSON"
+      ],
+      "semantic": {
+        "FindPerson": {
+          "person": "_$person[0]"
+        }
+      }
+    },
+    "RECORD_MEMO": {
+      "phrases": [
+        "V_RECORD_IMP PP_MINE UNDEF_ARTICLE VOICETAG PREPOSITION",
+        "V_RECORD_IMP UNDEF_ARTICLE VOICETAG PREPOSITION"
+      ],
+      "semantic": {
+        "RecordMemo": {}
+      }
+    },
+    "FIND_MUSIC": {
+      "phrases": [
+        "WHAT V_PLAY_FIN PREPOSITION MUSIC AND MUSIC POI_CATEGORY",
+        "V_FIND_IMP MUSIC PREPOSITION NEAR_TO_ME",
+        "WHAT V_PLAY_FIN PREPOSITION LOCATION",
+        "WHERE V_PLAY_FIN LOCATION MUSIC",
+        "WHERE V_PLAY_FIN MUSIC"
+      ],
+      "semantic": {
+        "ShowPOIs": {
+          "poicat": "_$poi_category[0]",
+          "genre": "_$music[0]",
+          "genre2": "_$music[1]",
+          "location": "_$location[0]['semantic']"
+        }
+      }
+    },
+    "START_RADAR": {
+      "phrases": [
+        "RADAR PREPOSITION",
+        "RADAR V_OPEN_INF",
+        "RADAR V_OPEN_FIN",
+        "RADAR V_SHOW_INF",
+        "RADAR",
+        "V_OPEN_FIN RADAR",
+        "V_FIND_IMP PREPOSITION MUSIC PREPOSITION NEAR_TO_ME"
+      ],
+      "semantic": {
+        "RadarStart": {}
+      }
+    },
+    "LIKED": {
+      "phrases": [
+        "LIKE"
+      ],
+      "semantic": {
+        "Rating": {
+          "stars": "fünf"
+        }
+      }
+    },
+    "RATING": {
+      "phrases": [
+        "NUMBER STARS",
+        "REST NUMBER STARS",
+        "REST REST NUMBER STARS",
+        "REST REST REST NUMBER STARS"
+      ],
+      "semantic": {
+        "Rating": {
+          "stars": "_$number[0]"
+        }
+      }
+    },
+    "FULL_TITLE": {
+      "phrases": [
+        "PREPOSITION THEME TITLE",
+        "PREPOSITION TITLE"
+      ],
+      "semantic": {
+        "title": "_$title[0]['semantic']"
+      }
+    },
+    "TITLE": {
+      "phrases": [
+        "REST",
+        "REST TITLE"
+      ],
+      "semantic": {
+        "value": "_$rest[0]",
+        "title": "_$title[0]['semantic']"
+      }
+    }
+  }
+}

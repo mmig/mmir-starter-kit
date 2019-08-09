@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        NOTE  the MMIR framework requires the following policies enabled: default-src 'unsafe-eval' ; media-src * blob: file:
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src * blob: file: ; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+
+        <title>mmir-starter-kit</title>
+
+        <!-- inlcude jquery v2.x for jquery-mobile
+                     NOTE: including jquery before loading the MMIR framework ensures that the framework
+                     will use jquery-functionality instead of alternative implementation
+                     (e.g. for cloning objects) which provides greater browser backwards compatability
+        -->
+        <script type="text/javascript" src="libs/jquery-2.2.3.js"></script>
+
+        <!-- auto-detect Cordova-environment and load its library if necessary: -->
+        <script type="text/javascript" src="mmirf/tools/initCordova.js"></script>
+
+        <!-- load the framework's core/base object -->
+        <script type="text/javascript" src="mmirf/core.js"></script>
+
+        <!--
+            config.js has some application-specific initialization that needs to be set
+            before the MMIR framework is started
+            (if you do not have/need this kind of configuration, you can remove this entry
+            from the HTML file)
+         -->
+        <script type="text/javascript" src="app/preinit.js"></script>
+
+        <!-- apply the MMIR frameworks's configuration and initialize it: -->
+        <script type="text/javascript" src="mmirf/vendor/libs/require.js" data-main="mmirf/mainConfig" ></script>
+
+    </head>
+    <body>
+        <div id="pageContainer" data-role="page" class="type-interior" data-url="pageContainer" data-cache="false">
+            <div id="pageContent" role="main" class="ui-content full_screen_content"></div>
+        </div>
+        <dialogs id="applications_dialogs"></dialogs>
+
+        <!-- load/start-up the application: -->
+        <script type="text/javascript" src="app/app.js"></script>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+{
+	"language": "en-GB",
+	"long": "eng-GBR",
+	
+	"plugins": {
+		"maryTextToSpeech": {
+			"voice": "dfki-spike"
+		},
+		"nuanceAudioInput": {
+			"language": "eng-GBR"
+		},
+		"nuanceTextToSpeech": {
+			"language": "en-UK"
+		},
+		"nuanceHttpTextToSpeech": {
+			"language": "en-UK"
+		}
+	}
+	
+}

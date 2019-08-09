@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="de.dfki.cos.mmir.starterkit" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>MMIR StaterKit</name>
+    <description>
+        A sample Apache Cordova application for the MMIR framework.
+    </description>
+    <author email="" href="https://github.com/mmig/mmir-starter-kit">
+        DFKI MMIG Team
+    </author>
+    <hook type="before_prepare" src="node_modules/mmir-tooling/utils/cordova-build-tool.js" />
+    <content src="index.html?env=cordova" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+</widget>
