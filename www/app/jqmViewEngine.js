@@ -1,6 +1,6 @@
 
 
-define(['mmirf/constants', 'jquery', 'mmirf/loadCss', 'module', 'require'],
+define(['mmirf/resources', 'jquery', 'mmirf/loadCss', 'module', 'require'],
 /**
  * View engine that uses jQuery Mobile for loading the views as new jQM pages.
  *

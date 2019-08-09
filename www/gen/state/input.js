@@ -15,403 +15,392 @@ function $serializeDatamodel(){
   "emma" : emma
    };
 }
-function $script_l43_c5(_event){
+function $script_l18_c7(_event){
 
-       			var actionName;
-           	 	for (name in _event.data) {
-           	 		if(name == 'phrase'){
-           	 			continue;
-           	 		}
-           	 		if(_event.data.hasOwnProperty(name)){
-	       				actionName = name;
-	       				break;
-       				}
-       			}
-
-       			console.log('InputManager: setting command_name to "'+actionName+'" for event-data '+JSON.stringify(_event.data));
-        	
+          var actionName;
+          for (name in _event.data) {
+            if(name == 'phrase'){
+              continue;
+            }
+            if(_event.data.hasOwnProperty(name)){
+              actionName = name;
+              break;
+            }
+          }
+          console.log('InputManager: setting command_name to "'+actionName+'" for event-data '+JSON.stringify(_event.data));
+          
+          command_name = actionName;
+      
 };
-$script_l43_c5.tagname='script';
-$script_l43_c5.line=43;
-$script_l43_c5.column=5;
-function $expr_l57_c18(_event){
-return actionName
-};
-$expr_l57_c18.tagname='undefined';
-$expr_l57_c18.line=57;
-$expr_l57_c18.column=18;
-function $assign_l57_c5(_event){
-command_name = $expr_l57_c18.apply(this, arguments);
-};
-$assign_l57_c5.tagname='assign';
-$assign_l57_c5.line=57;
-$assign_l57_c5.column=5;
-function $expr_l58_c18(_event){
+$script_l18_c7.tagname='script';
+$script_l18_c7.line=18;
+$script_l18_c7.column=7;
+function $expr_l33_c20(_event){
 return _event.data
 };
-$expr_l58_c18.tagname='undefined';
-$expr_l58_c18.line=58;
-$expr_l58_c18.column=18;
-function $assign_l58_c5(_event){
-command = $expr_l58_c18.apply(this, arguments);
+$expr_l33_c20.tagname='undefined';
+$expr_l33_c20.line=33;
+$expr_l33_c20.column=20;
+function $assign_l33_c7(_event){
+command = $expr_l33_c20.apply(this, arguments);
 };
-$assign_l58_c5.tagname='assign';
-$assign_l58_c5.line=58;
-$assign_l58_c5.column=5;
-function $cond_l60_c21(_event){
+$assign_l33_c7.tagname='assign';
+$assign_l33_c7.line=33;
+$assign_l33_c7.column=7;
+function $cond_l35_c22(_event){
 return command_name == 'Send'
 };
-$cond_l60_c21.tagname='undefined';
-$cond_l60_c21.line=60;
-$cond_l60_c21.column=21;
-function $cond_l61_c21(_event){
+$cond_l35_c22.tagname='undefined';
+$cond_l35_c22.line=35;
+$cond_l35_c22.column=22;
+function $cond_l36_c22(_event){
 return command_name == 'Play'
 };
-$cond_l61_c21.tagname='undefined';
-$cond_l61_c21.line=61;
-$cond_l61_c21.column=21;
-function $cond_l62_c21(_event){
+$cond_l36_c22.tagname='undefined';
+$cond_l36_c22.line=36;
+$cond_l36_c22.column=22;
+function $cond_l37_c22(_event){
 return command_name == 'Record'
 };
-$cond_l62_c21.tagname='undefined';
-$cond_l62_c21.line=62;
-$cond_l62_c21.column=21;
-function $cond_l63_c21(_event){
+$cond_l37_c22.tagname='undefined';
+$cond_l37_c22.line=37;
+$cond_l37_c22.column=22;
+function $cond_l38_c22(_event){
 return command_name == 'ShowInfo'
 };
-$cond_l63_c21.tagname='undefined';
-$cond_l63_c21.line=63;
-$cond_l63_c21.column=21;
-function $cond_l64_c21(_event){
+$cond_l38_c22.tagname='undefined';
+$cond_l38_c22.line=38;
+$cond_l38_c22.column=22;
+function $cond_l39_c22(_event){
 return command_name == 'Rating'
 };
-$cond_l64_c21.tagname='undefined';
-$cond_l64_c21.line=64;
-$cond_l64_c21.column=21;
-function $cond_l65_c21(_event){
+$cond_l39_c22.tagname='undefined';
+$cond_l39_c22.line=39;
+$cond_l39_c22.column=22;
+function $cond_l40_c22(_event){
 return command_name == 'RadarStart'
 };
-$cond_l65_c21.tagname='undefined';
-$cond_l65_c21.line=65;
-$cond_l65_c21.column=21;
-function $cond_l66_c21(_event){
+$cond_l40_c22.tagname='undefined';
+$cond_l40_c22.line=40;
+$cond_l40_c22.column=22;
+function $cond_l41_c22(_event){
 return command_name == 'ShowPOIs'
 };
-$cond_l66_c21.tagname='undefined';
-$cond_l66_c21.line=66;
-$cond_l66_c21.column=21;
-function $cond_l67_c21(_event){
+$cond_l41_c22.tagname='undefined';
+$cond_l41_c22.line=41;
+$cond_l41_c22.column=22;
+function $cond_l42_c22(_event){
 return command_name == 'ShowAppointments'
 };
-$cond_l67_c21.tagname='undefined';
-$cond_l67_c21.line=67;
-$cond_l67_c21.column=21;
-function $cond_l68_c21(_event){
+$cond_l42_c22.tagname='undefined';
+$cond_l42_c22.line=42;
+$cond_l42_c22.column=22;
+function $cond_l43_c22(_event){
 return command_name == 'CreateAppointment'
 };
-$cond_l68_c21.tagname='undefined';
-$cond_l68_c21.line=68;
-$cond_l68_c21.column=21;
-function $cond_l69_c21(_event){
+$cond_l43_c22.tagname='undefined';
+$cond_l43_c22.line=43;
+$cond_l43_c22.column=22;
+function $cond_l44_c22(_event){
 return command_name == 'RecordMemo'
 };
-$cond_l69_c21.tagname='undefined';
-$cond_l69_c21.line=69;
-$cond_l69_c21.column=21;
-function $cond_l70_c21(_event){
+$cond_l44_c22.tagname='undefined';
+$cond_l44_c22.line=44;
+$cond_l44_c22.column=22;
+function $cond_l45_c22(_event){
 return command_name == 'FindPerson'
 };
-$cond_l70_c21.tagname='undefined';
-$cond_l70_c21.line=70;
-$cond_l70_c21.column=21;
-function $cond_l71_c21(_event){
+$cond_l45_c22.tagname='undefined';
+$cond_l45_c22.line=45;
+$cond_l45_c22.column=22;
+function $cond_l46_c22(_event){
 return command_name == 'NoMatch'
 };
-$cond_l71_c21.tagname='undefined';
-$cond_l71_c21.line=71;
-$cond_l71_c21.column=21;
-function $script_l75_c5(_event){
+$cond_l46_c22.tagname='undefined';
+$cond_l46_c22.line=46;
+$cond_l46_c22.column=22;
+function $script_l50_c7(_event){
 
-		    var dm = null;//TODO: mmir.CalendarModel.getInstance().getDiscourseManager();
-		   	if (dm == null) {
-		   		var msg = mmir.lang.getText('did_not_understand_msg');
-				mmir.media.textToSpeech(msg);
-			} else {
-				dm.getCommand().parse(command);
-			}
-   
-};
-$script_l75_c5.tagname='script';
-$script_l75_c5.line=75;
-$script_l75_c5.column=5;
-function $script_l88_c5(_event){
-
-	    mmir.CalendarModel.getInstance().clearDiscourseManager();
-
-	    //dummy code:
-		console.info('sending ....')
-		alert('sending ....');
-	
-};
-$script_l88_c5.tagname='script';
-$script_l88_c5.line=88;
-$script_l88_c5.column=5;
-function $script_l99_c5(_event){
-
-        //dummy code:
-        console.info('play something ...')
-        alert('play something ...');
-    
-};
-$script_l99_c5.tagname='script';
-$script_l99_c5.line=99;
-$script_l99_c5.column=5;
-function $script_l108_c5(_event){
-
-	    mmir.CalendarModel.getInstance().clearDiscourseManager();
-		mmir.dialog.raise('click_on_rec_btn');
-	
-};
-$script_l108_c5.tagname='script';
-$script_l108_c5.line=108;
-$script_l108_c5.column=5;
-function $script_l116_c5(_event){
-
-	    mmir.CalendarModel.getInstance().clearDiscourseManager();
-		mmir.dialog.raise('poi.display_details');
-	
-};
-$script_l116_c5.tagname='script';
-$script_l116_c5.line=116;
-$script_l116_c5.column=5;
-function $script_l124_c5(_event){
-
-	    mmir.CalendarModel.getInstance().clearDiscourseManager();
-        //dummy code:
-        console.info('rating ...')
-		alert('rating ....');
-	
-};
-$script_l124_c5.tagname='script';
-$script_l124_c5.line=124;
-$script_l124_c5.column=5;
-function $script_l134_c5(_event){
-
-	    mmir.CalendarModel.getInstance().clearDiscourseManager();
-		mmir.dialog.raise('click_on_radar_btn');
-	
-};
-$script_l134_c5.tagname='script';
-$script_l134_c5.line=134;
-$script_l134_c5.column=5;
-function $script_l142_c5(_event){
-
-	    mmir.CalendarModel.getInstance().clearDiscourseManager();
-		mmir.dialog.raise('click_on_start_radio_btn', emma);
-	
-};
-$script_l142_c5.tagname='script';
-$script_l142_c5.line=142;
-$script_l142_c5.column=5;
-function $script_l150_c5(_event){
-
-	    mmir.CalendarModel.getInstance().clearDiscourseManager();
-		mmir.dialog.raise('click_on_start_audio_btn', emma);
-	
-};
-$script_l150_c5.tagname='script';
-$script_l150_c5.line=150;
-$script_l150_c5.column=5;
-function $script_l158_c5(_event){
-
-	    mmir.CalendarModel.getInstance().clearDiscourseManager();
-		mmir.MediaManager.textToSpeech('Sie können zurzeit nur Audio und lokationsbasiertes Radio abspielen.',null, null);
-	
-};
-$script_l158_c5.tagname='script';
-$script_l158_c5.line=158;
-$script_l158_c5.column=5;
-function $script_l166_c5(_event){
-
-	    mmir.CalendarModel.getInstance().clearDiscourseManager();
-		mmir.dialog.raise('show_appointments_speech', command);
-	
-};
-$script_l166_c5.tagname='script';
-$script_l166_c5.line=166;
-$script_l166_c5.column=5;
-function $script_l174_c5(_event){
-
-	    mmir.CalendarModel.getInstance().clearDiscourseManager();
-		mmir.dialog.raise('create_appointment_speech', command);
-	
-};
-$script_l174_c5.tagname='script';
-$script_l174_c5.line=174;
-$script_l174_c5.column=5;
-function $script_l182_c5(_event){
-
-	    mmir.CalendarModel.getInstance().clearDiscourseManager();
-	    mmir.dialog.performHelper('Calendar', 'capture');
-	
-};
-$script_l182_c5.tagname='script';
-$script_l182_c5.line=182;
-$script_l182_c5.column=5;
-function $script_l190_c5(_event){
-
-	    mmir.CalendarModel.getInstance().clearDiscourseManager();
-	    mmir.dialog.perform('Calendar', 'find_person', command);
-	
-};
-$script_l190_c5.tagname='script';
-$script_l190_c5.line=190;
-$script_l190_c5.column=5;
-function $script_l198_c5(_event){
-
-	    mmir.CalendarModel.getInstance().clearDiscourseManager();
-        //dummy code:
-        console.info('showing some pois ...')
-		alert('showing some pois ...');
-	
-};
-$script_l198_c5.tagname='script';
-$script_l198_c5.line=198;
-$script_l198_c5.column=5;
-function $expr_l230_c19(_event){
-return _event.data
-};
-$expr_l230_c19.tagname='undefined';
-$expr_l230_c19.line=230;
-$expr_l230_c19.column=19;
-function $assign_l230_c6(_event){
-data = $expr_l230_c19.apply(this, arguments);
-};
-$assign_l230_c6.tagname='assign';
-$assign_l230_c6.line=230;
-$assign_l230_c6.column=6;
-function $expr_l227_c19(_event){
-return {}
-};
-$expr_l227_c19.tagname='undefined';
-$expr_l227_c19.line=227;
-$expr_l227_c19.column=19;
-function $assign_l227_c6(_event){
-data = $expr_l227_c19.apply(this, arguments);
-};
-$assign_l227_c6.tagname='assign';
-$assign_l227_c6.line=227;
-$assign_l227_c6.column=6;
-function $script_l249_c6(_event){
-
-         mmir.dialog.raise('back');
-	 
-};
-$script_l249_c6.tagname='script';
-$script_l249_c6.line=249;
-$script_l249_c6.column=6;
-function $script_l257_c6(_event){
-
-         mmir.dialog.raise('click_on_login_btn');
-	 
-};
-$script_l257_c6.tagname='script';
-$script_l257_c6.line=257;
-$script_l257_c6.column=6;
-function $script_l265_c6(_event){
-
-         mmir.dialog.raise('click_on_register_btn');
-	 
-};
-$script_l265_c6.tagname='script';
-$script_l265_c6.line=265;
-$script_l265_c6.column=6;
-function $script_l273_c6(_event){
-
-         mmir.dialog.raise('click_on_sign_up_btn');
-	 
-};
-$script_l273_c6.tagname='script';
-$script_l273_c6.line=273;
-$script_l273_c6.column=6;
-function $script_l281_c6(_event){
-
-         mmir.dialog.raise('click_on_appointment_btn');
-	 
-};
-$script_l281_c6.tagname='script';
-$script_l281_c6.line=281;
-$script_l281_c6.column=6;
-function $script_l289_c6(_event){
-
-         mmir.dialog.raise('click_on_save_appointment_btn');
-	 
-};
-$script_l289_c6.tagname='script';
-$script_l289_c6.line=289;
-$script_l289_c6.column=6;
-function $script_l297_c6(_event){
-
-         mmir.dialog.raise('click_on_discard_appointment_btn');
-	 
-};
-$script_l297_c6.tagname='script';
-$script_l297_c6.line=297;
-$script_l297_c6.column=6;
-function $script_l305_c6(_event){
-
-         mmir.dialog.raise('click_on_language_btn', data);
-	
-};
-$script_l305_c6.tagname='script';
-$script_l305_c6.line=305;
-$script_l305_c6.column=6;
-function $script_l313_c6(_event){
-
-         mmir.dialog.raise('language_choosen', data);
+        var dm = null;//TODO: mmir.CalendarModel.getInstance().getDiscourseManager();
+        if (dm == null) {
+          var msg = mmir.lang.getText('did_not_understand_msg');
+          mmir.media.textToSpeech(msg);
+        } else {
+          dm.getCommand().parse(command);
+        }
      
 };
-$script_l313_c6.tagname='script';
-$script_l313_c6.line=313;
-$script_l313_c6.column=6;
-function $data_l30_c15(_event){
-return new Object()
+$script_l50_c7.tagname='script';
+$script_l50_c7.line=50;
+$script_l50_c7.column=7;
+function $script_l63_c7(_event){
+
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+
+        //dummy code:
+        console.info('sending ....')
+        alert('sending ....');
+      
 };
-$data_l30_c15.tagname='undefined';
-$data_l30_c15.line=30;
-$data_l30_c15.column=15;
-function $datamodel_l29_c3(_event){
-if(typeof data === "undefined")  data = $data_l30_c15.apply(this, arguments);
+$script_l63_c7.tagname='script';
+$script_l63_c7.line=63;
+$script_l63_c7.column=7;
+function $script_l74_c7(_event){
+
+          //dummy code:
+          console.info('play something ...')
+          alert('play something ...');
+      
 };
-$datamodel_l29_c3.tagname='datamodel';
-$datamodel_l29_c3.line=29;
-$datamodel_l29_c3.column=3;
-function $data_l38_c16(_event){
-return ''
+$script_l74_c7.tagname='script';
+$script_l74_c7.line=74;
+$script_l74_c7.column=7;
+function $script_l83_c7(_event){
+
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+        mmir.dialog.raise('click_on_rec_btn');
+      
 };
-$data_l38_c16.tagname='undefined';
-$data_l38_c16.line=38;
-$data_l38_c16.column=16;
-function $data_l39_c16(_event){
+$script_l83_c7.tagname='script';
+$script_l83_c7.line=83;
+$script_l83_c7.column=7;
+function $script_l91_c7(_event){
+
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+        mmir.dialog.raise('poi.display_details');
+      
+};
+$script_l91_c7.tagname='script';
+$script_l91_c7.line=91;
+$script_l91_c7.column=7;
+function $script_l99_c7(_event){
+
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+        //dummy code:
+        console.info('rating ...')
+        alert('rating ....');
+      
+};
+$script_l99_c7.tagname='script';
+$script_l99_c7.line=99;
+$script_l99_c7.column=7;
+function $script_l109_c7(_event){
+
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+        mmir.dialog.raise('click_on_radar_btn');
+      
+};
+$script_l109_c7.tagname='script';
+$script_l109_c7.line=109;
+$script_l109_c7.column=7;
+function $script_l117_c7(_event){
+
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+        mmir.dialog.raise('click_on_start_radio_btn', emma);
+      
+};
+$script_l117_c7.tagname='script';
+$script_l117_c7.line=117;
+$script_l117_c7.column=7;
+function $script_l125_c7(_event){
+
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+        mmir.dialog.raise('click_on_start_audio_btn', emma);
+      
+};
+$script_l125_c7.tagname='script';
+$script_l125_c7.line=125;
+$script_l125_c7.column=7;
+function $script_l133_c7(_event){
+
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+        mmir.MediaManager.textToSpeech('Sie können zurzeit nur Audio und lokationsbasiertes Radio abspielen.',null, null);
+      
+};
+$script_l133_c7.tagname='script';
+$script_l133_c7.line=133;
+$script_l133_c7.column=7;
+function $script_l141_c7(_event){
+
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+        mmir.dialog.raise('show_appointments_speech', command);
+      
+};
+$script_l141_c7.tagname='script';
+$script_l141_c7.line=141;
+$script_l141_c7.column=7;
+function $script_l149_c7(_event){
+
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+        mmir.dialog.raise('create_appointment_speech', command);
+      
+};
+$script_l149_c7.tagname='script';
+$script_l149_c7.line=149;
+$script_l149_c7.column=7;
+function $script_l157_c7(_event){
+
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+        mmir.dialog.performHelper('Calendar', 'capture');
+      
+};
+$script_l157_c7.tagname='script';
+$script_l157_c7.line=157;
+$script_l157_c7.column=7;
+function $script_l165_c7(_event){
+
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+        mmir.dialog.perform('Calendar', 'find_person', command);
+      
+};
+$script_l165_c7.tagname='script';
+$script_l165_c7.line=165;
+$script_l165_c7.column=7;
+function $script_l173_c7(_event){
+
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+        //dummy code:
+        console.info('showing some pois ...')
+        alert('showing some pois ...');
+      
+};
+$script_l173_c7.tagname='script';
+$script_l173_c7.line=173;
+$script_l173_c7.column=7;
+function $expr_l205_c20(_event){
+return _event.data
+};
+$expr_l205_c20.tagname='undefined';
+$expr_l205_c20.line=205;
+$expr_l205_c20.column=20;
+function $assign_l205_c7(_event){
+data = $expr_l205_c20.apply(this, arguments);
+};
+$assign_l205_c7.tagname='assign';
+$assign_l205_c7.line=205;
+$assign_l205_c7.column=7;
+function $expr_l202_c21(_event){
 return {}
 };
-$data_l39_c16.tagname='undefined';
-$data_l39_c16.line=39;
-$data_l39_c16.column=16;
-function $data_l40_c16(_event){
+$expr_l202_c21.tagname='undefined';
+$expr_l202_c21.line=202;
+$expr_l202_c21.column=21;
+function $assign_l202_c8(_event){
+data = $expr_l202_c21.apply(this, arguments);
+};
+$assign_l202_c8.tagname='assign';
+$assign_l202_c8.line=202;
+$assign_l202_c8.column=8;
+function $script_l224_c9(_event){
+
+          mmir.dialog.raise('back');
+        
+};
+$script_l224_c9.tagname='script';
+$script_l224_c9.line=224;
+$script_l224_c9.column=9;
+function $script_l232_c9(_event){
+
+          mmir.dialog.raise('click_on_login_btn');
+        
+};
+$script_l232_c9.tagname='script';
+$script_l232_c9.line=232;
+$script_l232_c9.column=9;
+function $script_l240_c9(_event){
+
+          mmir.dialog.raise('click_on_register_btn');
+        
+};
+$script_l240_c9.tagname='script';
+$script_l240_c9.line=240;
+$script_l240_c9.column=9;
+function $script_l248_c9(_event){
+
+          mmir.dialog.raise('click_on_sign_up_btn');
+        
+};
+$script_l248_c9.tagname='script';
+$script_l248_c9.line=248;
+$script_l248_c9.column=9;
+function $script_l256_c9(_event){
+
+          mmir.dialog.raise('click_on_appointment_btn');
+        
+};
+$script_l256_c9.tagname='script';
+$script_l256_c9.line=256;
+$script_l256_c9.column=9;
+function $script_l264_c9(_event){
+
+          mmir.dialog.raise('click_on_save_appointment_btn');
+        
+};
+$script_l264_c9.tagname='script';
+$script_l264_c9.line=264;
+$script_l264_c9.column=9;
+function $script_l272_c9(_event){
+
+          mmir.dialog.raise('click_on_discard_appointment_btn');
+        
+};
+$script_l272_c9.tagname='script';
+$script_l272_c9.line=272;
+$script_l272_c9.column=9;
+function $script_l280_c9(_event){
+
+          mmir.dialog.raise('click_on_language_btn', data);
+        
+};
+$script_l280_c9.tagname='script';
+$script_l280_c9.line=280;
+$script_l280_c9.column=9;
+function $script_l288_c9(_event){
+
+          mmir.dialog.raise('language_choosen', data);
+        
+};
+$script_l288_c9.tagname='script';
+$script_l288_c9.line=288;
+$script_l288_c9.column=9;
+function $data_l5_c15(_event){
+return new Object()
+};
+$data_l5_c15.tagname='undefined';
+$data_l5_c15.line=5;
+$data_l5_c15.column=15;
+function $datamodel_l4_c3(_event){
+if(typeof data === "undefined")  data = $data_l5_c15.apply(this, arguments);
+};
+$datamodel_l4_c3.tagname='datamodel';
+$datamodel_l4_c3.line=4;
+$datamodel_l4_c3.column=3;
+function $data_l13_c18(_event){
+return ''
+};
+$data_l13_c18.tagname='undefined';
+$data_l13_c18.line=13;
+$data_l13_c18.column=18;
+function $data_l14_c18(_event){
+return {}
+};
+$data_l14_c18.tagname='undefined';
+$data_l14_c18.line=14;
+$data_l14_c18.column=18;
+function $data_l15_c18(_event){
 return {"Emma": { "medium": "acoustic" , "mode" : "voice" }}
 };
-$data_l40_c16.tagname='undefined';
-$data_l40_c16.line=40;
-$data_l40_c16.column=16;
-function $datamodel_l37_c4(_event){
-if(typeof command_name === "undefined")  command_name = $data_l38_c16.apply(this, arguments);
-if(typeof command === "undefined")  command = $data_l39_c16.apply(this, arguments);
-if(typeof emma === "undefined")  emma = $data_l40_c16.apply(this, arguments);
+$data_l15_c18.tagname='undefined';
+$data_l15_c18.line=15;
+$data_l15_c18.column=18;
+function $datamodel_l12_c5(_event){
+if(typeof command_name === "undefined")  command_name = $data_l13_c18.apply(this, arguments);
+if(typeof command === "undefined")  command = $data_l14_c18.apply(this, arguments);
+if(typeof emma === "undefined")  emma = $data_l15_c18.apply(this, arguments);
 };
-$datamodel_l37_c4.tagname='datamodel';
-$datamodel_l37_c4.line=37;
-$datamodel_l37_c4.column=4;
+$datamodel_l12_c5.tagname='datamodel';
+$datamodel_l12_c5.line=12;
+$datamodel_l12_c5.column=5;
 return {
  "initial": "input_manager_initial_state",
  "name": "input",
@@ -428,13 +417,13 @@ return {
     {
      "event": "speech_input_event",
      "target": "speech_input",
-     "$closeLine": 33,
+     "$closeLine": 8,
      "$closeColumn": 65
     },
     {
      "event": "touch_input_event",
      "target": "touch_input",
-     "$closeLine": 34,
+     "$closeLine": 9,
      "$closeColumn": 63
     }
    ],
@@ -444,85 +433,84 @@ return {
      "name": "speech_input",
      "$type": "state",
      "onEntry": [
-      $script_l43_c5,
-      $assign_l57_c5,
-      $assign_l58_c5
+      $script_l18_c7,
+      $assign_l33_c7
      ],
      "transitions": [
       {
-       "cond": $cond_l60_c21,
+       "cond": $cond_l35_c22,
        "target": "send",
-       "$closeLine": 60,
-       "$closeColumn": 71
+       "$closeLine": 35,
+       "$closeColumn": 72
       },
       {
-       "cond": $cond_l61_c21,
+       "cond": $cond_l36_c22,
        "target": "play",
-       "$closeLine": 61,
-       "$closeColumn": 71
+       "$closeLine": 36,
+       "$closeColumn": 72
       },
       {
-       "cond": $cond_l62_c21,
+       "cond": $cond_l37_c22,
        "target": "record",
-       "$closeLine": 62,
-       "$closeColumn": 75
+       "$closeLine": 37,
+       "$closeColumn": 76
       },
       {
-       "cond": $cond_l63_c21,
+       "cond": $cond_l38_c22,
        "target": "show_info",
-       "$closeLine": 63,
-       "$closeColumn": 80
+       "$closeLine": 38,
+       "$closeColumn": 81
       },
       {
-       "cond": $cond_l64_c21,
+       "cond": $cond_l39_c22,
        "target": "rating",
-       "$closeLine": 64,
-       "$closeColumn": 75
+       "$closeLine": 39,
+       "$closeColumn": 76
       },
       {
-       "cond": $cond_l65_c21,
+       "cond": $cond_l40_c22,
        "target": "start_radar",
-       "$closeLine": 65,
-       "$closeColumn": 84
+       "$closeLine": 40,
+       "$closeColumn": 85
       },
       {
-       "cond": $cond_l66_c21,
+       "cond": $cond_l41_c22,
        "target": "show_pois",
-       "$closeLine": 66,
-       "$closeColumn": 80
+       "$closeLine": 41,
+       "$closeColumn": 81
       },
       {
-       "cond": $cond_l67_c21,
+       "cond": $cond_l42_c22,
        "target": "show_appointments",
-       "$closeLine": 67,
-       "$closeColumn": 96
+       "$closeLine": 42,
+       "$closeColumn": 97
       },
       {
-       "cond": $cond_l68_c21,
+       "cond": $cond_l43_c22,
        "target": "create_appointment",
-       "$closeLine": 68,
-       "$closeColumn": 98
+       "$closeLine": 43,
+       "$closeColumn": 99
       },
       {
-       "cond": $cond_l69_c21,
+       "cond": $cond_l44_c22,
        "target": "record_memo",
-       "$closeLine": 69,
-       "$closeColumn": 84
+       "$closeLine": 44,
+       "$closeColumn": 85
       },
       {
-       "cond": $cond_l70_c21,
+       "cond": $cond_l45_c22,
        "target": "find_person",
-       "$closeLine": 70,
-       "$closeColumn": 84
+       "$closeLine": 45,
+       "$closeColumn": 85
       },
       {
-       "cond": $cond_l71_c21,
+       "cond": $cond_l46_c22,
        "target": "no_match",
-       "$closeLine": 71,
-       "$closeColumn": 78
+       "$closeLine": 46,
+       "$closeColumn": 79
       }
      ],
-     "$closeLine": 72,
+     "$closeLine": 47,
      "$closeColumn": 4
     },
     {
@@ -530,9 +518,9 @@ return {
      "name": "no_match",
      "$type": "state",
      "onEntry": [
-      $script_l75_c5
+      $script_l50_c7
      ],
-     "$closeLine": 85,
+     "$closeLine": 60,
      "$closeColumn": 4
     },
     {
@@ -540,9 +528,9 @@ return {
      "name": "send",
      "$type": "state",
      "onEntry": [
-      $script_l88_c5
+      $script_l63_c7
      ],
-     "$closeLine": 96,
+     "$closeLine": 71,
      "$closeColumn": 4
     },
     {
@@ -550,9 +538,9 @@ return {
      "name": "play",
      "$type": "state",
      "onEntry": [
-      $script_l99_c5
+      $script_l74_c7
      ],
-     "$closeLine": 105,
+     "$closeLine": 80,
      "$closeColumn": 4
     },
     {
@@ -560,9 +548,9 @@ return {
      "name": "record",
      "$type": "state",
      "onEntry": [
-      $script_l108_c5
+      $script_l83_c7
      ],
-     "$closeLine": 113,
+     "$closeLine": 88,
      "$closeColumn": 4
     },
     {
@@ -570,9 +558,9 @@ return {
      "name": "show_info",
      "$type": "state",
      "onEntry": [
-      $script_l116_c5
+      $script_l91_c7
      ],
-     "$closeLine": 121,
+     "$closeLine": 96,
      "$closeColumn": 4
     },
     {
@@ -580,9 +568,9 @@ return {
      "name": "rating",
      "$type": "state",
      "onEntry": [
-      $script_l124_c5
+      $script_l99_c7
      ],
-     "$closeLine": 131,
+     "$closeLine": 106,
      "$closeColumn": 4
     },
     {
@@ -590,9 +578,9 @@ return {
      "name": "start_radar",
      "$type": "state",
      "onEntry": [
-      $script_l134_c5
+      $script_l109_c7
      ],
-     "$closeLine": 139,
+     "$closeLine": 114,
      "$closeColumn": 4
     },
     {
@@ -600,9 +588,9 @@ return {
      "name": "play_radio",
      "$type": "state",
      "onEntry": [
-      $script_l142_c5
+      $script_l117_c7
      ],
-     "$closeLine": 147,
+     "$closeLine": 122,
      "$closeColumn": 4
     },
     {
@@ -610,9 +598,9 @@ return {
      "name": "play_audio",
      "$type": "state",
      "onEntry": [
-      $script_l150_c5
+      $script_l125_c7
      ],
-     "$closeLine": 155,
+     "$closeLine": 130,
      "$closeColumn": 4
     },
     {
@@ -620,9 +608,9 @@ return {
      "name": "play_voice",
      "$type": "state",
      "onEntry": [
-      $script_l158_c5
+      $script_l133_c7
      ],
-     "$closeLine": 163,
+     "$closeLine": 138,
      "$closeColumn": 4
     },
     {
@@ -630,9 +618,9 @@ return {
      "name": "show_appointments",
      "$type": "state",
      "onEntry": [
-      $script_l166_c5
+      $script_l141_c7
      ],
-     "$closeLine": 171,
+     "$closeLine": 146,
      "$closeColumn": 4
     },
     {
@@ -640,9 +628,9 @@ return {
      "name": "create_appointment",
      "$type": "state",
      "onEntry": [
-      $script_l174_c5
+      $script_l149_c7
      ],
-     "$closeLine": 179,
+     "$closeLine": 154,
      "$closeColumn": 4
     },
     {
@@ -650,9 +638,9 @@ return {
      "name": "record_memo",
      "$type": "state",
      "onEntry": [
-      $script_l182_c5
+      $script_l157_c7
      ],
-     "$closeLine": 187,
+     "$closeLine": 162,
      "$closeColumn": 4
     },
     {
@@ -660,9 +648,9 @@ return {
      "name": "find_person",
      "$type": "state",
      "onEntry": [
-      $script_l190_c5
+      $script_l165_c7
      ],
-     "$closeLine": 195,
+     "$closeLine": 170,
      "$closeColumn": 4
     },
     {
@@ -670,9 +658,9 @@ return {
      "name": "show_pois",
      "$type": "state",
      "onEntry": [
-      $script_l198_c5
+      $script_l173_c7
      ],
-     "$closeLine": 205,
+     "$closeLine": 180,
      "$closeColumn": 4
     },
     {
@@ -686,176 +674,176 @@ return {
        "name": "start_touch",
        "$type": "state",
        "onEntry": [
-        $assign_l227_c6
+        $assign_l202_c8
        ],
        "onExit": [
-        $assign_l230_c6
+        $assign_l205_c7
        ],
        "transitions": [
         {
          "event": "back",
          "target": "back",
-         "$closeLine": 233,
-         "$closeColumn": 45
+         "$closeLine": 208,
+         "$closeColumn": 47
         },
         {
          "event": "click_on_login_btn",
          "target": "login",
-         "$closeLine": 234,
-         "$closeColumn": 60
+         "$closeLine": 209,
+         "$closeColumn": 62
         },
         {
          "event": "click_on_register_btn",
          "target": "register",
-         "$closeLine": 235,
-         "$closeColumn": 66
+         "$closeLine": 210,
+         "$closeColumn": 68
         },
         {
          "event": "click_on_sign_up_btn",
          "target": "sign_up",
-         "$closeLine": 236,
-         "$closeColumn": 64
+         "$closeLine": 211,
+         "$closeColumn": 66
         },
         {
          "event": "click_on_appointment_btn",
          "target": "appointment",
-         "$closeLine": 238,
-         "$closeColumn": 72
+         "$closeLine": 213,
+         "$closeColumn": 74
         },
         {
          "event": "click_on_save_appointment_btn",
          "target": "save_appointment",
-         "$closeLine": 239,
-         "$closeColumn": 82
+         "$closeLine": 214,
+         "$closeColumn": 84
         },
         {
          "event": "click_on_discard_appointment_btn",
          "target": "discard_appointment",
-         "$closeLine": 240,
-         "$closeColumn": 88
+         "$closeLine": 215,
+         "$closeColumn": 90
         },
         {
          "event": "click_on_language_btn",
          "name": "click_on_language_btn",
          "target": "language_btn",
-         "$closeLine": 242,
-         "$closeColumn": 202
+         "$closeLine": 217,
+         "$closeColumn": 101
         },
         {
          "event": "language_choosen",
          "name": "language_choosen",
          "target": "language_chosen",
-         "$closeLine": 243,
-         "$closeColumn": 198
+         "$closeLine": 218,
+         "$closeColumn": 94
         }
        ],
-       "$closeLine": 245,
-       "$closeColumn": 5
+       "$closeLine": 220,
+       "$closeColumn": 6
       },
       {
        "id": "back",
        "name": "back",
        "$type": "state",
        "onEntry": [
-        $script_l249_c6
+        $script_l224_c9
        ],
-       "$closeLine": 253,
-       "$closeColumn": 5
+       "$closeLine": 228,
+       "$closeColumn": 6
       },
       {
        "id": "login",
        "name": "login",
        "$type": "state",
        "onEntry": [
-        $script_l257_c6
+        $script_l232_c9
        ],
-       "$closeLine": 261,
-       "$closeColumn": 5
+       "$closeLine": 236,
+       "$closeColumn": 6
       },
       {
        "id": "register",
        "name": "register",
        "$type": "state",
        "onEntry": [
-        $script_l265_c6
+        $script_l240_c9
        ],
-       "$closeLine": 269,
-       "$closeColumn": 5
+       "$closeLine": 244,
+       "$closeColumn": 6
       },
       {
        "id": "sign_up",
        "name": "sign_up",
        "$type": "state",
        "onEntry": [
-        $script_l273_c6
+        $script_l248_c9
        ],
-       "$closeLine": 277,
-       "$closeColumn": 5
+       "$closeLine": 252,
+       "$closeColumn": 6
       },
       {
        "id": "appointment",
        "name": "appointment",
        "$type": "state",
        "onEntry": [
-        $script_l281_c6
+        $script_l256_c9
        ],
-       "$closeLine": 285,
-       "$closeColumn": 5
+       "$closeLine": 260,
+       "$closeColumn": 6
       },
       {
        "id": "save_appointment",
        "name": "save_appointment",
        "$type": "state",
        "onEntry": [
-        $script_l289_c6
+        $script_l264_c9
        ],
-       "$closeLine": 293,
-       "$closeColumn": 5
+       "$closeLine": 268,
+       "$closeColumn": 6
       },
       {
        "id": "discard_appointment",
        "name": "discard_appointment",
        "$type": "state",
        "onEntry": [
-        $script_l297_c6
+        $script_l272_c9
        ],
-       "$closeLine": 301,
-       "$closeColumn": 5
+       "$closeLine": 276,
+       "$closeColumn": 6
       },
       {
        "id": "language_btn",
        "name": "language_btn",
        "$type": "state",
        "onEntry": [
-        $script_l305_c6
+        $script_l280_c9
        ],
-       "$closeLine": 309,
-       "$closeColumn": 5
+       "$closeLine": 284,
+       "$closeColumn": 6
       },
       {
        "id": "language_chosen",
        "name": "language_chosen",
        "$type": "state",
        "onEntry": [
-        $script_l313_c6
+        $script_l288_c9
        ],
-       "$closeLine": 317,
-       "$closeColumn": 5
+       "$closeLine": 292,
+       "$closeColumn": 6
       }
      ],
-     "$closeLine": 319,
+     "$closeLine": 294,
      "$closeColumn": 4
     }
    ],
-   "$closeLine": 320,
-   "$closeColumn": 3
+   "$closeLine": 296,
+   "$closeColumn": 2
   }
  ],
- "$closeLine": 321,
+ "$closeLine": 297,
  "$closeColumn": 2,
  "onEntry": [
-  $datamodel_l29_c3,
-  $datamodel_l37_c4
+  $datamodel_l4_c3,
+  $datamodel_l12_c5
  ],
  "$deserializeDatamodel": $deserializeDatamodel,
  "$serializeDatamodel": $serializeDatamodel,

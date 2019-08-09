@@ -1,32 +1,6 @@
 <scxml xmlns="http://www.w3.org/2005/07/scxml" version="1.0"
        profile="ecmascript" id="scxmlRoot" initial="start">
 
-  <!--
-      Copyright (C) 2012-2013 DFKI GmbH
-      Deutsches Forschungszentrum fuer Kuenstliche Intelligenz
-      German Research Center for Artificial Intelligence
-      http://www.dfki.de
-
-Permission is hereby granted, free of charge, to any person obtaining a
-copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be included
-in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-  -->
-
   <state id="start" name="start">
     <transition event="init" name="init" target="main_state" />
   </state>
@@ -35,7 +9,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
     <onentry>
       <script>
-			mmir.dialog.render('Application', 'login');
+        mmir.dialog.render('Application', 'login');
       </script>
     </onentry>
 
@@ -44,19 +18,19 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
     <transition name="click_on_language_btn" event="click_on_language_btn" >
       <script>
-			mmir.dialog.perform('Application','slide_down_language_menu');
+        mmir.dialog.perform('Application','slide_down_language_menu');
       </script>
     </transition>
 
     <transition name="language_choosen" event="language_choosen" >
       <script>
-		var isChanged = _event.data &amp;&amp; _event.data.changed ? _event.data.changed : false;
-		if(isChanged){
-			mmir.dialog.render('Application', 'login');
-		}
-		else {
-			mmir.dialog.perform('Application','slide_up_language_menu');
-		}
+        var isChanged = _event.data &amp;&amp; _event.data.changed ? _event.data.changed : false;
+        if(isChanged){
+          mmir.dialog.render('Application', 'login');
+        }
+        else {
+          mmir.dialog.perform('Application','slide_up_language_menu');
+        }
       </script>
     </transition>
 
@@ -65,7 +39,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   <state id="registration_form" name="registration_form">
     <onentry>
       <script>
-			mmir.dialog.render('Application', 'registration');
+        mmir.dialog.render('Application', 'registration');
       </script>
     </onentry>
     <transition event="click_on_register_btn" name="click_on_register_btn" target="try_to_register_new_user" />
@@ -75,7 +49,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   <state id="try_to_register_new_user" name="try_to_register_new_user">
     <onentry>
       <script>
-			mmir.dialog.perform('Application', 'register');
+        mmir.dialog.perform('Application', 'register');
       </script>
     </onentry>
     <transition cond="mmir.User.getInstance() == null" target="main_state"></transition>
@@ -85,7 +59,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   <state id="login_user" name="login_user">
     <onentry>
       <script>
-			mmir.dialog.perform('Application','login');
+        mmir.dialog.perform('Application','login');
       </script>
     </onentry>
     <transition event="login_failed" target="main_state" />
@@ -96,7 +70,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   <state id="logged_in" name="logged_in">
     <onentry>
       <script>
-			mmir.dialog.render('Application', 'welcome');
+        mmir.dialog.render('Application', 'welcome');
       </script>
     </onentry>
     <transition event="click_on_appointment_btn" name="click_on_appointment_btn" target="create_appointment" />
@@ -106,12 +80,15 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
   <state id="create_appointment" name="create_appointment">
     <initial>
-      <onentry>
-		<script>
-			mmir.dialog.render('Calendar', 'create_appointment');
-		</script>
-      </onentry>
+      <transition target="create_appointment_initial">
+        <script>
+          mmir.dialog.render('Calendar', 'create_appointment');
+        </script>
+      </transition>
     </initial>
+
+    <state id="create_appointment_initial" name="create_appointment_initial">
+    </state>
 
     <transition event="click_on_save_appointment_btn" name="click_on_save_appointment_btn" target="save_appointment">
     </transition>
@@ -124,10 +101,10 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
     <state id="save_appointment" name="save_appointment">
       <onentry>
-		<script>
-	  		var data = {container_id: "create_appointment"};
-	  		var result = mmir.dialog.perform('Calendar','create_appointment',data);
-		</script>
+        <script>
+          var data = {container_id: "create_appointment"};
+          var result = mmir.dialog.perform('Calendar','create_appointment',data);
+        </script>
       </onentry>
       <transition target="logged_in" />
     </state>

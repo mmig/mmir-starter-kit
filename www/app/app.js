@@ -1,5 +1,7 @@
 
-mmir.ready(function () { require(['jquery'], function(){
+mmir.ready(function () { mmir.require(['mmirf/dialogManager4Compatiblity', 'mmirf/dialogManager'], function(mmir4DialogManagerCompat, dialogManager){
+
+	mmir4DialogManagerCompat(dialogManager);
 
 	test_isNetworkAvailable();
 
@@ -109,7 +111,7 @@ mmir.ready(function () { require(['jquery'], function(){
 	//setup handler for BACK button (and for swipe-left gesture)
 	function initHistoryBackHandler() {
 
-		var isCordovaEnv = ! mmir.const.isBrowserEnv();
+		var isCordovaEnv = ! mmir.res.isBrowserEnv();
 
 		//generic BACK handler:
 		var backButtonHandler = function (event){

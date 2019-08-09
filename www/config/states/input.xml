@@ -1,0 +1,298 @@
+<scxml initial="input_manager_initial_state" name="input" version="0.9" xmlns="http://www.w3.org/2005/07/scxml">
+
+<state id="input_manager_initial_state" initial="touch_input" name="input_manager_initial_state">
+
+  <datamodel>
+   <data expr="new Object()" id="data"></data>
+  </datamodel>
+
+  <transition event="speech_input_event" target="speech_input"></transition>
+  <transition event="touch_input_event" target="touch_input"></transition>
+
+  <state id="speech_input" name="speech_input">
+    <datamodel>
+      <data expr="&#039;&#039;" id="command_name"></data>
+      <data expr="{}" id="command"></data>
+      <data expr="{&quot;Emma&quot;: { &quot;medium&quot;: &quot;acoustic&quot; , &quot;mode&quot; : &quot;voice&quot; }}" id="emma"></data>
+    </datamodel>
+    <onentry>
+      <script>
+          var actionName;
+          for (name in _event.data) {
+            if(name == 'phrase'){
+              continue;
+            }
+            if(_event.data.hasOwnProperty(name)){
+              actionName = name;
+              break;
+            }
+          }
+          console.log('InputManager: setting command_name to "'+actionName+'" for event-data '+JSON.stringify(_event.data));
+          
+          command_name = actionName;
+      </script>
+      <assign expr="_event.data" location="command"></assign>
+    </onentry>
+    <transition cond="command_name == &#039;Send&#039;" target="send"></transition>
+    <transition cond="command_name == &#039;Play&#039;" target="play"></transition>
+    <transition cond="command_name == &#039;Record&#039;" target="record"></transition>
+    <transition cond="command_name == &#039;ShowInfo&#039;" target="show_info"></transition>
+    <transition cond="command_name == &#039;Rating&#039;" target="rating"></transition>
+    <transition cond="command_name == &#039;RadarStart&#039;" target="start_radar"></transition>
+    <transition cond="command_name == &#039;ShowPOIs&#039;" target="show_pois"></transition>
+    <transition cond="command_name == &#039;ShowAppointments&#039;" target="show_appointments"></transition>
+    <transition cond="command_name == &#039;CreateAppointment&#039;" target="create_appointment"></transition>
+    <transition cond="command_name == &#039;RecordMemo&#039;" target="record_memo"></transition>
+    <transition cond="command_name == &#039;FindPerson&#039;" target="find_person"></transition>
+    <transition cond="command_name == &#039;NoMatch&#039;" target="no_match"></transition>
+  </state>
+  <state id="no_match" name="no_match">
+    <onentry>
+      <script>
+        var dm = null;//TODO: mmir.CalendarModel.getInstance().getDiscourseManager();
+        if (dm == null) {
+          var msg = mmir.lang.getText(&#039;did_not_understand_msg&#039;);
+          mmir.media.textToSpeech(msg);
+        } else {
+          dm.getCommand().parse(command);
+        }
+     </script>
+   </onentry>
+  </state>
+  <state id="send" name="send">
+    <onentry>
+      <script>
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+
+        //dummy code:
+        console.info(&#039;sending ....&#039;)
+        alert(&#039;sending ....&#039;);
+      </script>
+    </onentry>
+  </state>
+  <state id="play" name="play">
+    <onentry>
+      <script>
+          //dummy code:
+          console.info(&#039;play something ...&#039;)
+          alert(&#039;play something ...&#039;);
+      </script>
+    </onentry>
+  </state>
+  <state id="record" name="record">
+    <onentry>
+      <script>
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+        mmir.dialog.raise(&#039;click_on_rec_btn&#039;);
+      </script>
+    </onentry>
+  </state>
+  <state id="show_info" name="show_info">
+    <onentry>
+      <script>
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+        mmir.dialog.raise(&#039;poi.display_details&#039;);
+      </script>
+    </onentry>
+  </state>
+  <state id="rating" name="rating">
+    <onentry>
+      <script>
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+        //dummy code:
+        console.info(&#039;rating ...&#039;)
+        alert(&#039;rating ....&#039;);
+      </script>
+    </onentry>
+  </state>
+  <state id="start_radar" name="start_radar">
+    <onentry>
+      <script>
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+        mmir.dialog.raise(&#039;click_on_radar_btn&#039;);
+      </script>
+    </onentry>
+  </state>
+  <state id="play_radio" name="play_radio">
+    <onentry>
+      <script>
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+        mmir.dialog.raise(&#039;click_on_start_radio_btn&#039;, emma);
+      </script>
+    </onentry>
+  </state>
+  <state id="play_audio" name="play_audio">
+    <onentry>
+      <script>
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+        mmir.dialog.raise(&#039;click_on_start_audio_btn&#039;, emma);
+      </script>
+    </onentry>
+  </state>
+  <state id="play_voice" name="play_voice">
+    <onentry>
+      <script>
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+        mmir.MediaManager.textToSpeech(&#039;Sie können zurzeit nur Audio und lokationsbasiertes Radio abspielen.&#039;,null, null);
+      </script>
+    </onentry>
+  </state>
+  <state id="show_appointments" name="show_appointments">
+    <onentry>
+      <script>
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+        mmir.dialog.raise(&#039;show_appointments_speech&#039;, command);
+      </script>
+    </onentry>
+  </state>
+  <state id="create_appointment" name="create_appointment">
+    <onentry>
+      <script>
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+        mmir.dialog.raise(&#039;create_appointment_speech&#039;, command);
+      </script>
+    </onentry>
+  </state>
+  <state id="record_memo" name="record_memo">
+    <onentry>
+      <script>
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+        mmir.dialog.performHelper(&#039;Calendar&#039;, &#039;capture&#039;);
+      </script>
+    </onentry>
+  </state>
+  <state id="find_person" name="find_person">
+    <onentry>
+      <script>
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+        mmir.dialog.perform(&#039;Calendar&#039;, &#039;find_person&#039;, command);
+      </script>
+    </onentry>
+  </state>
+  <state id="show_pois" name="show_pois">
+    <onentry>
+      <script>
+        mmir.CalendarModel.getInstance().clearDiscourseManager();
+        //dummy code:
+        console.info(&#039;showing some pois ...&#039;)
+        alert(&#039;showing some pois ...&#039;);
+      </script>
+    </onentry>
+  </state>
+
+  <state id="touch_input" initial="start_touch" name="touch_input">
+
+    <state id="start_touch" name="start_touch">
+
+
+<!-- EXAMPLE forward event data as EMMA object (i.e. with metadata and the original event-data as property evtdata):
+    <onentry>
+     <script>
+         data = { &quot;Emma&quot; : { &quot;medium&quot; : &quot;tactile&quot; , &quot;mode&quot; : &quot;gui&quot; }};
+     </script>
+     <assign expr="{}" location="data.evtdata"></assign>
+    </onentry>
+
+    <onexit>
+     <assign expr="_event.data" location="data.evtdata.data"></assign>
+    </onexit>
+
+    EXAMPLE forward event-data normally (without EMMA metadata)
+-->
+    <onentry>
+       <assign expr="{}" location="data"></assign>
+    </onentry>
+    <onexit>
+      <assign expr="_event.data" location="data"></assign>
+      </onexit>
+
+      <transition event="back" target="back"></transition>
+      <transition event="click_on_login_btn" target="login"></transition>
+      <transition event="click_on_register_btn" target="register"></transition>
+      <transition event="click_on_sign_up_btn" target="sign_up"></transition>
+
+      <transition event="click_on_appointment_btn" target="appointment"></transition>
+      <transition event="click_on_save_appointment_btn" target="save_appointment"></transition>
+      <transition event="click_on_discard_appointment_btn" target="discard_appointment"></transition>
+
+      <transition event="click_on_language_btn" name="click_on_language_btn" target="language_btn"></transition>
+      <transition event="language_choosen" name="language_choosen" target="language_chosen"></transition>
+
+    </state>
+
+    <state id="back" name="back">
+      <onentry>
+        <script>
+          mmir.dialog.raise(&#039;back&#039;);
+        </script>
+      </onentry>
+    </state>
+
+    <state id="login" name="login">
+      <onentry>
+        <script>
+          mmir.dialog.raise(&#039;click_on_login_btn&#039;);
+        </script>
+       </onentry>
+    </state>
+
+    <state id="register" name="register">
+      <onentry>
+        <script>
+          mmir.dialog.raise(&#039;click_on_register_btn&#039;);
+        </script>
+      </onentry>
+    </state>
+
+    <state id="sign_up" name="sign_up">
+      <onentry>
+        <script>
+          mmir.dialog.raise(&#039;click_on_sign_up_btn&#039;);
+        </script>
+      </onentry>
+    </state>
+
+    <state id="appointment" name="appointment">
+      <onentry>
+        <script>
+          mmir.dialog.raise(&#039;click_on_appointment_btn&#039;);
+        </script>
+      </onentry>
+    </state>
+
+    <state id="save_appointment" name="save_appointment">
+      <onentry>
+        <script>
+          mmir.dialog.raise(&#039;click_on_save_appointment_btn&#039;);
+        </script>
+      </onentry>
+    </state>
+
+    <state id="discard_appointment" name="discard_appointment">
+      <onentry>
+        <script>
+          mmir.dialog.raise(&#039;click_on_discard_appointment_btn&#039;);
+        </script>
+      </onentry>
+    </state>
+
+    <state id="language_btn" name="language_btn">
+      <onentry>
+        <script>
+          mmir.dialog.raise(&#039;click_on_language_btn&#039;, data);
+        </script>
+      </onentry>
+    </state>
+
+    <state id="language_chosen" name="language_chosen">
+      <onentry>
+        <script>
+          mmir.dialog.raise(&#039;language_choosen&#039;, data);
+        </script>
+      </onentry>
+    </state>
+
+  </state>
+
+</state>
+</scxml>

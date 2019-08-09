@@ -6,37 +6,25 @@
 	"grammarAsyncCompileMode": true,
 
 	"config": {
-		"paths": {"apprenderer": "appjs/micrenderer"}
+		"paths": {"apprenderer": "app/micrenderer"}
 	},
 
-	"html5AudioInput": {
-		"silenceDetector": {
-			"noiseTreshold": "0.1",
-			"pauseCount": "3",
-			"minimalSpeachCount": "3",
-			"resetCount": "15"
-		},
-
-		"silenceBuffer": "2000000",
-		"webSocketAddress": "ws://localhost:9999",
-		"soundPackageSize": "4096",
-		"silenceDetectorPath": "mmirf/env/media/silenceDetection.js"
-	},
-
-	"maryTextToSpeech": {
+	"ttsMary": {
 		"logLevel": "debug",
-			"serverBasePath": "http://mary.dfki.de:59125/"
+		"baseUrl": "http://mary.dfki.de:59125/"
 	},
 
 	"mediaManager": {
 		"plugins": {
-			"browser": ["html5AudioOutput.js",
-					"webspeechAudioInput",
-					{"mod": "webAudioTextToSpeech", "config": "webttsMaryImpl"}
+			"browser": [
+				{"mod": "webOutput", "type": "audio"},
+				{"mod": "webspeechAudioInput", "type": "asr"},
+				{"mod": "audiotts", "config": "ttsMary", "type": "tts"}
 			],
-			"cordova": ["cordovaAudioOutput.js",
-						"androidAudioInput.js",
-						"androidTextToSpeech.js"
+			"cordova": [
+				{"mod": "cordovaOutput", "type": "audio"},
+				{"mod": "asrAndroid", "type": "asr"},
+				{"mod": "ttsAndroid", "type": "tts"}
 			]
 		}
 	}
