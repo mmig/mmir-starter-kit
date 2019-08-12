@@ -10,7 +10,10 @@
 Demo project for the [mmir][1] framework in combination with [Apache Cordova][9]
 with platform `android`.
 
-This project uses [mmir-lib][2] version 5.x.x
+This project uses [mmir-lib][2] version 5.x.x, and [jQuery Mobile][12] as a GUI library:
+although `jQuery Mobile` is somewhat dated, this projects demonstrates, how to use
+`mmir-lib` in a project that does not utilize any additional build-tools
+like `webpack`, `browserify` or similar.
 
 # Demo
 
@@ -22,6 +25,22 @@ Try the [demo page][6]:
 # Further Reading
 
 See the [mmir page][1] for more details, guides, API documentation etc.
+
+## Custom Build Configuration
+
+Extended build configuration settings for `mmir-lib` can be specified via file
+`mmir.build.config.js` which is automatically read by `mmir-tooling/utils/cordova-build-tool.js`
+if it exists (see step 3 in section [Create Manually](#create-manually)).
+
+The example file `mmir.build.config.js` contains an empty configuration (i.e.
+default build configuration will be used), and in addition an alternative
+configuration that specifies a different _state model_ for the `DialogManager`
+which will use animated transitions when changing views.
+
+To enable the "animated transitions" state model, export the variable
+`stateModelWithViewTransitions` instead of `defaultConfig` in `mmir.build.config.js`.
+
+For more options and setting see [mmir-tooling][3].
 
 ## Create Manually
 
@@ -75,7 +94,7 @@ See the [mmir page][1] for more details, guides, API documentation etc.
 ----
 
 #### License
-If not stated otherwise, the code, resource files etc. is provided under the MIT license (see license file).
+If not stated otherwise, the code, resource files etc. are provided under the MIT license (see license file).
 
 [0]: https://github.com/mmig/mmir-starter-kit
 [1]: https://github.com/mmig/mmir
@@ -89,3 +108,4 @@ If not stated otherwise, the code, resource files etc. is provided under the MIT
 [9]: https://cordova.apache.org/
 [10]: https://cordova.apache.org/docs/en/latest
 [11]: https://cordova.apache.org/docs/en/latest/guide/platforms/android/
+[12]: https://jquerymobile.com/
