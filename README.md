@@ -93,7 +93,14 @@ For more options and setting see [mmir-tooling][3].
 
 ----
 
-#### License
+## Previous Versions
+
+for previous versions of the `mmir-starter-kit` see repository [mmir-v4-starter-kit][13]
+which contains examples that use `mmir-lib` v4.x and before.
+
+Note that these examples are deprecated and will not be updated anymore.
+
+## License
 If not stated otherwise, the code, resource files etc. are provided under the MIT license (see license file).
 
 [0]: https://github.com/mmig/mmir-starter-kit
@@ -109,3 +116,4 @@ If not stated otherwise, the code, resource files etc. are provided under the MI
 [10]: https://cordova.apache.org/docs/en/latest
 [11]: https://cordova.apache.org/docs/en/latest/guide/platforms/android/
 [12]: https://jquerymobile.com/
+[13]: https://github.com/mmig/mmir-v4-starter-kit
