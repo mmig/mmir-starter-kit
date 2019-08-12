@@ -6,12 +6,12 @@
 
   core.config({
 		config: {
-			'mmirf/jqmViewEngine': {
+			'jqmViewEngine': {
 				'cssUrl': 'content/css/jquery.mobile-1.4.5.min.css'
 			}
 		},
 		paths:{
-			'mmirf/jqmViewEngine': 'app/jqmViewEngine',
+			'jqmViewEngine': 'app/jqmViewEngine',
 			'jquery': 'libs/jquery-2.2.3',
 			'jqm': 'libs/jquery.mobile-1.4.5',
 			'jqmSimpleModal': 'libs/jquery.simplemodal-1.4.4'
@@ -33,9 +33,6 @@
 			//register a custom rendering module
 			// NOTE: the framework also needs to be configured to actually use it (see below for an example)
 			'jqViewEngine': 'app/jqSimpleViewEngine',
-
-//			//overwrite framework's jQuery library with another version:
-//			'jquery': 'libs/jquery-x.y.z',
 
 //			//overwrite the framework's Layout implementation with an app-specific class:
 //			'layout': 'app/remoteLayout',
@@ -88,10 +85,13 @@
 	});
 
 	//this would set a "custom" rendering engine/implementation
-	// (the module "jqViewEngine" is registered above)
-	core.viewEngine = 'mmirf/jqmViewEngine';
+	// (the module "jqmViewEngine" is registered above)
+	core.viewEngine = 'jqmViewEngine';
+  // // ... example: use simplified jQuery view engine:
+	// core.viewEngine = 'jqViewEngine';
 
 	core.logLevel = 'info';
+  // //example: show full stack-trace when printing logging entries in console
   // core.logTrace = {trace: true, depth: 'full'};
 
 	//add a listener for Cordova initialization, in order to do something
