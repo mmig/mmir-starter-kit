@@ -38,7 +38,7 @@ define(['jquery', 'mmirf/loadCss', 'mmirf/logger', 'module'],function(jquery, lo
 
 	//load CSS for jQuery Mobile:
 	var JQM_CSS_ID   = 'jqm-css';
-	var JQM_CSS_HREF = 'mmirf/vendor/styles/jquery.mobile-1.4.5.min.css';
+	var JQM_CSS_HREF = 'content/css/jquery.mobile-1.4.5.min.css';
 	loadCss({href: JQM_CSS_HREF, id: JQM_CSS_ID});
 
 	var promise = jquery.Deferred();
@@ -48,7 +48,7 @@ define(['jquery', 'mmirf/loadCss', 'mmirf/logger', 'module'],function(jquery, lo
 	){
 
 		//prepare resources for standalone-wait-dialog
-		dlg.styleUrl = 'mmirf/vendor/styles/' + dlg.styleUrl;
+		dlg.styleUrl = dlg.styleUrl;
 		dlg._loadStyle();
 		var _viewEngineWaitId = 'view-wait-dlg';
 
