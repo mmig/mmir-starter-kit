@@ -24,7 +24,7 @@ Try the [demo page][6]:
 
 # Further Reading
 
-See the [mmir page][1] for more details, guides, API documentation etc.
+See the [mmir project page][1] for more details, guides, API documentation etc.
 
 ## Custom Build Configuration
 
